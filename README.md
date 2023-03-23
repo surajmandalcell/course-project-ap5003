@@ -1,10 +1,10 @@
 # Django Firebase Chat
 
-# Project Members
+## Project Members
 - Sruaj Mandal
 - Vedavyas M.
 
-# Installation Process
+## Installation Process
 ### Backend
 ```
 virtualenv venv
