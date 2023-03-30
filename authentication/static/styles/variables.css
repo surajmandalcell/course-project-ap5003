@@ -1,1 +1,4 @@
-app/static/styles/variables.css
+:root{
+  --base-color: rgb(14, 23, 43);
+  --link-color: rgb(14, 3, 182);
+}

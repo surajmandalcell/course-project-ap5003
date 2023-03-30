@@ -2,10 +2,11 @@ from django.shortcuts import render
 
 
 def chat(request):
+    image = "images/user.jpeg"
     chats = [
-        {"name": "Alice", "image": "alice.jpg"},
-        {"name": "Bob", "image": "bob.jpg"},
-        {"name": "Charlie", "image": "charlie.jpg"},
+        {"name": "Alice", "image": image},
+        {"name": "Bob", "image": image},
+        {"name": "Charlie", "image": image},
     ]
     messages = [
         {"sender": "Alice", "text": "Hi there!"},

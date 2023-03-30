@@ -81,8 +81,8 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "app/static"),
     os.path.join(BASE_DIR, "authentication/static"),
+    os.path.join(BASE_DIR, "chat/static"),
 )
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

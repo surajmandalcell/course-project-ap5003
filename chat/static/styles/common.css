@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  float: left;
+  width: 25%;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sidebar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-ui {
+  float: right;
+  width: 75%;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.chat-ui ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-ui li {
+  margin-bottom: 10px;
+}
