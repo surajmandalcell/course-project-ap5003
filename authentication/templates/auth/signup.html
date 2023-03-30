@@ -10,23 +10,15 @@
 
   <body>
     <div class="card">
-      <h1>Login</h1>
+      <h1>New account!</h1>
       <form>
         <input type="email" placeholder="Enter your email" />
+        <input type="email" placeholder="Enter your email again" />
         <input type="password" placeholder="Enter your password" />
       </form>
-      <a
-        class="forgot_password"
-        href="#"
-        align="left"
-        onClick="alert('Feature is work in progress!')"
-        >Forgot Password?</a
-      >
-      <button class="login_button">Login</button>
-      <div class="sign_up">
-        Don't have an account? <a class="sign_up_link" href="/signup">Sign Up</a>
-      </div>
+      <a class="forgot_password" href="#" align="left">Forgot Password?</a>
+      <button class="login_button">Register</button>
+      <div class="sign_up">Already have an account? <a class="sign_up_link" href="/">Login</a></div>
     </div>
   </body>
-  <script src="{% static 'scripts/main.js' %}"></script>
 </html>
