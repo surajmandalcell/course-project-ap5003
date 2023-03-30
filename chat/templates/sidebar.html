@@ -1,0 +1,5 @@
+<ul>
+  {% for chat in chats %}
+  <li><img src="{{ chat.image }}" alt="{{ chat.name }}" /> {{ chat.name }}</li>
+  {% endfor %}
+</ul>

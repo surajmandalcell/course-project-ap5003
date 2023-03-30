@@ -47,13 +47,13 @@ div.card form input[type='password'] {
   border: 1px solid #cecece;
 }
 div.card a {
-  color: #009579;
+  color: var(--link-color);
   text-decoration: none;
 }
 div.card .forgot_password {
   font-weight: 500;
   font-size: 0.8rem;
-  padding-left: 1.8rem;
+  padding-left: 1.9rem;
   margin-bottom: 0.7rem;
   align-self: flex-start;
 }
