@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 def chat(request):
-    image = "images/user.jpeg"
+    image = "https://image.flaticon.com/icons/svg/327/327779.svg"
     chats = [
         {"name": "Alice", "image": image},
         {"name": "Bob", "image": image},

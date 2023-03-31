@@ -7,4 +7,5 @@ urlpatterns = [
     path("", include("django.contrib.auth.urls")),
     path("", include("authentication.urls")),
     path("chat/", include("chat.urls"), name="chat"),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
