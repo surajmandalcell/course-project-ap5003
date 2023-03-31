@@ -10,3 +10,11 @@ proposal.pdf
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
+app/__pycache__/
+app/*.py[cod]
+authentication/__pycache__/
+authentication/*.py[cod]
+chat/__pycache__/
+chat/*.py[cod]
