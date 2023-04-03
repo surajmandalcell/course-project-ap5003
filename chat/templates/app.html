@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Chat | Home</title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="{% static "styles/common.css" %}" />
+  </head>
+  <body>
+    <div class="window">{% include 'sidebar.html' %} {% include 'chat.html' %}</div>
+  </body>
+</html>

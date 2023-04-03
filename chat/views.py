@@ -14,4 +14,4 @@ def chat(request):
         {"sender": "Alice", "text": "How are you?"},
     ]
     context = {"chats": chats, "messages": messages}
-    return render(request, "chat.html", context)
+    return render(request, "app.html", context)
