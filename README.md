@@ -2,8 +2,9 @@
 
 ## Project Members
 
-- Sruaj Mandal
+- Suraj Mandal
 - Vedavyas M.
+- Harsh Arvindbhai Tejani
 
 ## Installation Process
 
