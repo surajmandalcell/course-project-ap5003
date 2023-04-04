@@ -1,6 +1,9 @@
 project.pdf
 prpposal.pdf
 proposal.pdf
+.env
+
+authentication/config/serviceAccountKey.json
 
 # basic gitignore patterns
 .DS_Store
