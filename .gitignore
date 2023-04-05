@@ -21,3 +21,4 @@ authentication/__pycache__/
 authentication/*.py[cod]
 chat/__pycache__/
 chat/*.py[cod]
+chat/node_modules/

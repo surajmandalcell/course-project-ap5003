@@ -10,7 +10,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "authentication.apps.AuthenticationConfig",
-    "chat.apps.ChatConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -32,11 +31,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "app.urls"
+REACT_APP_DIR = os.path.join(BASE_DIR, "chat")
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            REACT_APP_DIR,
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -84,7 +86,8 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "authentication/static"),
-    os.path.join(BASE_DIR, "chat/static"),
+    os.path.join(BASE_DIR, "chat/build"),
+    os.path.join(BASE_DIR, "chat/build/static"),
 )
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
