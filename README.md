@@ -12,8 +12,7 @@
 
 #### Tasks
 - [x] Create a Flask application
-- [ ] Create a Firebase project
-- [ ] Create a Firebase Firestore database
+- [x] Create a Firebase project
 - [ ] Create auth ui
 - [ ] Create messaging ui
 - [ ] Connect it with flask
@@ -30,11 +29,11 @@
 - Harsh Arvindbhai Tejani
 
 #### Tasks
-- [ ] Create a Dockerfile
-- [ ] Create a docker-compose.yml file
-- [ ] Create a Makefile
-- [ ] Create docker image and push to docker hub
-- [ ] Create kubernetes deployment and service files
+- [x] Create a Dockerfile
+- [x] Create a docker-compose.yml file
+- [x] Create a Makefile
+- [x] Create docker image and push to docker hub
+- [x] Create kubernetes deployment and service files
 
 ---
 
