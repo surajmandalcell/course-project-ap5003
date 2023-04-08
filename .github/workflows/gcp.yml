@@ -9,7 +9,7 @@ env:
   IMAGE_NAME: cruelplatypus67/msg
   GCP_PROJECT_ID: suraj-personal
   GCP_SV_MAIL: ${{ secrets.GCP_SV_MAIL }}
-  GCP_SA_KEY: ${{ env.GCP_SA_KEY }}
+  GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
 
 
 jobs:
