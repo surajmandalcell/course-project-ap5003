@@ -42,7 +42,7 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_USERNAME }}
 
       - name: Deploy to GKE
-        uses: google-github-actions/deploy-cloud-run@v0.3.0
+        uses: google-github-actions/deploy-cloudrun@v1
         with:
           image: ${{ env.IMAGE_NAME }}:latest
           service_name: app

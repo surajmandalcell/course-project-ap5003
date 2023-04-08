@@ -34,7 +34,10 @@
 - [x] Create a Makefile
 - [x] Create docker image and push to docker hub
 - [x] Create kubernetes deployment and service files
-
+- [x] Make the application deployable on kubernetes
+- [x] Create a github action to deploy the application on kubernetes
+- [x] Successfully deploy the application on google kubernetes engine
+ 
 ---
 
 #### Getting Started
