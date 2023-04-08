@@ -28,8 +28,8 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ env.DOCKERHUB_USERNAME }}/python-app:${{ github.sha }}
-          ${{ env.DOCKERHUB_USERNAME }}/python-app:latest
+          ${{ env.DOCKERHUB_USERNAME }}/msg:${{ github.sha }}
+          ${{ env.DOCKERHUB_USERNAME }}/msg:latest
         build-args: |
           PYTHON_VERSION=3.11
 
