@@ -2,6 +2,9 @@
 
 
 ## `Application Programming`
+
+> Topic: Flask + React application that will use Firebase as a backend
+
 #### Project Members
 
 - Suraj Mandal
@@ -18,6 +21,8 @@
 
 ## `Virtualization`
 
+> Topic: Flask + React application that will run on Kubernetes hosted on gcp
+
 #### Project Members
 
 - Suraj Mandal
@@ -31,11 +36,25 @@
 - [ ] Create docker image and push to docker hub
 - [ ] Create kubernetes deployment and service files
 
+---
 
-#### Installation Process
+#### Getting Started
 
+For local Development
 ```
 brew install poetry
 poetry shell
 poetry install
+```
+
+For docker
+```
+docker-compose up
+```
+
+For kubernetes
+```
+make build
+make push
+make deploy
 ```
