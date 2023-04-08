@@ -35,10 +35,4 @@ jobs:
       - name: Deploy to GKE
         uses: google-github-actions/deploy-cloudrun@v1
         with:
-          args: gcloud container clusters get-credentials my-cluster --zone us-central1-a
-      - name: Deploy to Kubernetes
-        uses: appleboy/kubectl-action@master
-        with:
-          args: apply -f kube-def.yml
-        env:
-          GOOGLE_CLOUD_PROJECT: ${{ env.GCP_PROJECT_ID }}
+          args: gcloud container clusters get-credentials my-cluster --zone us-central1-a --project suraj-personal
