@@ -2,3 +2,7 @@
 .mypy_cache
 docker-stack.yml
 .env
+__pycache__/app.cpython-311.pyc
+.gitignore
+__pycache__/tests.cpython-311-pytest-7.2.2.pyc
+.coverage
