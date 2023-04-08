@@ -1,21 +1,16 @@
 from flask import Flask
-from flask import jsonify
+from flask import send_from_directory
+from backend.routes import app_routes
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="./frontend/build", static_url_path="/")
+app.register_blueprint(app_routes)
 
 
+# Static React App
 @app.route("/")
-def hello():
-    """Return a friendly HTTP greeting."""
-    print("I am inside hello world")
-    return "Hello World! I can make change at route: /change"
-
-
-@app.route("/change/<dollar>/<cents>")
-def changeroute(dollar, cents):
-    print(f"Make Change for {dollar}.{cents}")
-    return jsonify({dollar, cents})
+def serve():
+    return send_from_directory(app.static_folder, "index.html")
 
 
 if __name__ == "__main__":
-    app.run(use_reloader=True, host="0.0.0.0", port=8080, debug=True, threaded=True)
+    app.run(use_reloader=True, host="0.0.0.0", port=80, debug=True, threaded=True)
