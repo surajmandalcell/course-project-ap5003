@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: cruelplatypus67/msg:0.3.0
+        image: cruelplatypus67/msg:latest
         ports:
         - containerPort: 80
         env:
