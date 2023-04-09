@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, getAuth, User } from 'firebase/auth';
 import {
   getFirestore,
   collection,
@@ -13,7 +13,17 @@ import {
 const firebaseConfig = atob("eyJhcGlLZXkiOiJBSXphU3lBT1VfN1FpV2JJWGxJaTM0em5rNGtOUFdqZHRVc05zV0EiLCJhdXRoRG9tYWluIjoic3VyYWotcGVyc29uYWwuZmlyZWJhc2VhcHAuY29tIiwicHJvamVjdElkIjoic3VyYWotcGVyc29uYWwiLCJzdG9yYWdlQnVja2V0Ijoic3VyYWotcGVyc29uYWwuYXBwc3BvdC5jb20iLCJtZXNzYWdpbmdTZW5kZXJJZCI6IjQ4NDQ4NzIxNzExIiwiYXBwSWQiOiIxOjQ4NDQ4NzIxNzExOndlYjo2NGI1NDM3YmU1ZmExZWE5OGQ0N2RhIn0=");
 
 const app = initializeApp(JSON.parse(firebaseConfig));
-const db = getFirestore(app);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+
+
+
+/**
+ * 
+ *
+ * Helper functions 
+ *
+ **/
 
 async function loginWithGoogle() {
   try {
@@ -24,14 +34,14 @@ async function loginWithGoogle() {
 
     return { uid: user.uid, displayName: user.displayName };
   } catch (error) {
-    if (error.code !== 'auth/cancelled-popup-request') {
+    if ((error as any).code !== 'auth/cancelled-popup-request') {
       console.error(error);
     }
     return null;
   }
 }
 
-async function sendMessage(roomId, user, text) {
+async function sendMessage(roomId: string, user: User, text: string) {
   try {
     await addDoc(collection(db, 'chat-rooms', roomId, 'messages'), {
       uid: user.uid,
@@ -44,7 +54,7 @@ async function sendMessage(roomId, user, text) {
   }
 }
 
-function getMessages(roomId, callback) {
+function getMessages(roomId: string, callback: any) {
   return onSnapshot(
     query(collection(db, 'chat-rooms', roomId, 'messages'), orderBy('timestamp', 'asc')),
     (querySnapshot) => {

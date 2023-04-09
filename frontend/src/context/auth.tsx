@@ -1,8 +1,8 @@
 import React, { createContext, useState } from 'react';
 import { loginWithGoogle } from '../services/firebase';
-import { getAuth, User as FirebaseUser } from "firebase/auth";
+import { User as FirebaseUser } from "firebase/auth";
 
-interface AuthContextType {
+export interface AuthContextType {
   user: FirebaseUser | null;
   login: () => Promise<void>;
 }
@@ -18,7 +18,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const login = async () => {
     const user = await loginWithGoogle();
     if (!user) {
-      window.alert('Error al iniciar sesión');
+      window.alert('Error, no login!');
     }
 
     setUser(user as any);
