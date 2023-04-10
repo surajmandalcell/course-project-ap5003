@@ -8,3 +8,4 @@ __pycache__/tests.cpython-311-pytest-7.2.2.pyc
 .coverage
 frontend/node_modules
 backend/__pycache__/routes.cpython-311.pyc
+__pycache__
