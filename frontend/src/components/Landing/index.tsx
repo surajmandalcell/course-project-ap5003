@@ -1,8 +1,11 @@
+import { getAuth } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { chatRooms } from "../../data/chatRooms";
 import { MessageInput } from "../MessageInput";
 import { MessageList } from "../MessageList";
+import { signOut } from 'firebase/auth';
+import { auth } from "../../services/firebase";
 
 function ChatRoom() {
   const params = useParams();
@@ -17,6 +20,11 @@ function ChatRoom() {
 
   const handleSidebarClick = (roomId: string) => {
     setRoom(chatRooms.find((x) => x.id === roomId));
+  };
+
+  const logout = () => {
+    signOut(auth);
+    window.location.reload();
   };
 
   return (
@@ -35,6 +43,14 @@ function ChatRoom() {
               </div>
             </li>
           ))}
+          <li key="logout">
+            <div
+              onClick={logout}
+              className="block px-4 py-2 rounded hover:bg-gray-700 hover:cursor-pointer"
+            >
+              🚪 Logout
+            </div>
+          </li>
         </ul>
       </div>
 

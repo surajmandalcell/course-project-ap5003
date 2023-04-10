@@ -23,7 +23,7 @@ function MessageList({ roomId }: { roomId: string }) {
 
     return (
         <div className="overflow-x-hidden overflow-y-auto h-max message-list-container bg-slate-950" ref={containerRef}>
-            <ul className="px-4 py-6 rounded-md bg-slate-800 message-list" style={{ height: '100%' }}>
+            <ul className="px-4 py-6 rounded-md bg-slate-800 message-list" style={{ height: 'max-content' }}>
                 {messages.map((x: any) => (
                     <Message
                         key={x.id}

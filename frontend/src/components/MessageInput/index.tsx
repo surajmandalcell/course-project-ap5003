@@ -17,6 +17,10 @@ function MessageInput({ roomId }: { roomId: string }) {
         setValue('');
     };
 
+    if (roomId === 'announcements' &&
+        (user?.uid !== 'Z99PiXuRASUFNALa51Em8SWn4E82' && user?.uid !== 'uY1p0xXYnpcVnkXRggpB7bcqoPH3')
+    ) return null;
+
     return (
         <form onSubmit={handleSubmit} className="flex items-center justify-center">
             <input
