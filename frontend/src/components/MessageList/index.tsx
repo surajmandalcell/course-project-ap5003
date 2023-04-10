@@ -1,27 +1,28 @@
+import { getAuth } from 'firebase/auth';
 import React from 'react';
-import { useAuth } from '../../hooks/useAuth';
 import { useMessages } from '../../hooks/useMessages';
+import { auth } from '../../services/firebase';
 import './styles.css';
 
-function MessageList({ roomId }) {
+function MessageList({ roomId }: { roomId: string }) {
     const containerRef = React.useRef(null);
-    const { user } = useAuth();
+    const { currentUser: user } = auth;
     const messages = useMessages(roomId);
 
     React.useLayoutEffect(() => {
         if (containerRef.current) {
-            containerRef.current.scrollTop = containerRef.current.scrollHeight;
+            (containerRef.current as any).scrollTop = (containerRef.current as any).scrollHeight;
         }
     });
 
     return (
         <div className="message-list-container" ref={containerRef}>
             <ul className="message-list">
-                {messages.map((x) => (
+                {messages.map((x: any) => (
                     <Message
                         key={x.id}
                         message={x}
-                        isOwnMessage={x.uid === user.uid}
+                        isOwnMessage={x.uid === user?.uid}
                     />
                 ))}
             </ul>
@@ -29,7 +30,7 @@ function MessageList({ roomId }) {
     );
 }
 
-function Message({ message, isOwnMessage }) {
+function Message({ message, isOwnMessage }: { message: any; isOwnMessage: boolean; }) {
     const { displayName, text } = message;
 
     return (
@@ -41,3 +42,4 @@ function Message({ message, isOwnMessage }) {
 }
 
 export { MessageList };
+

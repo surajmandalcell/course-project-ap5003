@@ -13,7 +13,7 @@ function App() {
   }
 
   return (
-    <div className="container bg-dark-900">
+    <div className="bg-dark-900">
       {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
     </div>
   );
