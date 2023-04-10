@@ -48,6 +48,9 @@ devDependencies:
   tailwindcss:
     specifier: ^3.3.1
     version: 3.3.1(postcss@8.4.21)
+  typescript:
+    specifier: ^5.0.4
+    version: 5.0.4
   vite:
     specifier: ^4.2.1
     version: 4.2.1
@@ -56,7 +59,7 @@ devDependencies:
     version: 2.4.0(vite@4.2.1)
   vite-tsconfig-paths:
     specifier: ^4.0.8
-    version: 4.0.8(vite@4.2.1)
+    version: 4.0.8(typescript@5.0.4)(vite@4.2.1)
 
 packages:
 
@@ -2899,7 +2902,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /tsconfck@2.1.1:
+  /tsconfck@2.1.1(typescript@5.0.4):
     resolution: {integrity: sha512-ZPCkJBKASZBmBUNqGHmRhdhM8pJYDdOXp4nRgj/O0JwUwsMq50lCDRQP/M5GBNAA0elPrq4gAeu4dkaVCuKWww==}
     engines: {node: ^14.13.1 || ^16 || >=18}
     hasBin: true
@@ -2908,11 +2911,19 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+    dependencies:
+      typescript: 5.0.4
     dev: true
 
   /tslib@2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
     dev: false
+
+  /typescript@5.0.4:
+    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
+    engines: {node: '>=12.20'}
+    hasBin: true
+    dev: true
 
   /update-browserslist-db@1.0.10(browserslist@4.21.5):
     resolution: {integrity: sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ==}
@@ -2942,7 +2953,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-tsconfig-paths@4.0.8(vite@4.2.1):
+  /vite-tsconfig-paths@4.0.8(typescript@5.0.4)(vite@4.2.1):
     resolution: {integrity: sha512-p04zH+Ey+NT78571x0pdX7nVRIJSlmKVvYryFglSWOK3Hc72eDL0+JJfbyQiugaIBApJkaEqbBQvqpsFZOSVGg==}
     peerDependencies:
       vite: '*'
@@ -2952,7 +2963,7 @@ packages:
     dependencies:
       debug: 4.3.4
       globrex: 0.1.2
-      tsconfck: 2.1.1
+      tsconfck: 2.1.1(typescript@5.0.4)
       vite: 4.2.1
     transitivePeerDependencies:
       - supports-color
