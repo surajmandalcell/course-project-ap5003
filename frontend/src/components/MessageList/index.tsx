@@ -6,13 +6,22 @@ import './styles.css';
 function MessageList({ roomId }: { roomId: string }) {
     const containerRef = React.useRef(null);
     const { currentUser: user } = auth;
-    const messages = useMessages(roomId);
+    const messages: any = useMessages(roomId);
 
     React.useLayoutEffect(() => {
         if (containerRef.current) {
             (containerRef.current as any).scrollTop = (containerRef.current as any).scrollHeight;
         }
     });
+
+    console.log(messages)
+
+    // TODO: Add loading state
+    // if (!messages) return (
+    //     <div className="flex flex-col items-center justify-center h-full">
+    //         Loading...
+    //     </div>
+    // );
 
     return (
         <div className="overflow-x-hidden overflow-y-auto h-max message-list-container bg-slate-950" ref={containerRef}>
