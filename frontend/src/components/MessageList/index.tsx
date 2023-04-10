@@ -33,8 +33,8 @@ function Message({ message, isOwnMessage }: { message: any; isOwnMessage: boolea
     const { displayName, text } = message;
 
     return (
-        <li className={['message', isOwnMessage && 'own-message'].join(' ')}>
-            <h4 className="sender">{isOwnMessage ? 'You' : displayName}</h4>
+        <li className={[!isOwnMessage && 'pr-16', 'message', isOwnMessage && 'own-message pl-16', 'rounded-lg', 'opacity-95'].join(' ')}>
+            <h4 className="italic font-semibold sender">{isOwnMessage ? 'You' : displayName}</h4>
             <div>{text}</div>
         </li>
     );
