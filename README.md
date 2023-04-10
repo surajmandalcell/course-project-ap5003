@@ -13,9 +13,9 @@
 #### Tasks
 - [x] Create a Flask application
 - [x] Create a Firebase project
-- [ ] Create auth ui
-- [ ] Create messaging ui
-- [ ] Connect it with flask
+- [x] Create auth ui
+- [x] Create messaging ui
+- [x] Connect it with flask
 
 
 ## `Virtualization`
