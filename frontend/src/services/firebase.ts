@@ -1,5 +1,10 @@
-import { initializeApp } from 'firebase/app';
-import { GoogleAuthProvider, signInWithPopup, getAuth, User } from 'firebase/auth';
+import { initializeApp } from "firebase/app";
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  getAuth,
+  User,
+} from "firebase/auth";
 import {
   getFirestore,
   collection,
@@ -8,20 +13,20 @@ import {
   onSnapshot,
   query,
   orderBy,
-} from 'firebase/firestore';
+} from "firebase/firestore";
 
-const firebaseConfig = atob("eyJhcGlLZXkiOiJBSXphU3lBT1VfN1FpV2JJWGxJaTM0em5rNGtOUFdqZHRVc05zV0EiLCJhdXRoRG9tYWluIjoic3VyYWotcGVyc29uYWwuZmlyZWJhc2VhcHAuY29tIiwicHJvamVjdElkIjoic3VyYWotcGVyc29uYWwiLCJzdG9yYWdlQnVja2V0Ijoic3VyYWotcGVyc29uYWwuYXBwc3BvdC5jb20iLCJtZXNzYWdpbmdTZW5kZXJJZCI6IjQ4NDQ4NzIxNzExIiwiYXBwSWQiOiIxOjQ4NDQ4NzIxNzExOndlYjo2NGI1NDM3YmU1ZmExZWE5OGQ0N2RhIn0=");
+const firebaseConfig = atob(
+  "eyJhcGlLZXkiOiJBSXphU3lBT1VfN1FpV2JJWGxJaTM0em5rNGtOUFdqZHRVc05zV0EiLCJhdXRoRG9tYWluIjoic3VyYWotcGVyc29uYWwuZmlyZWJhc2VhcHAuY29tIiwicHJvamVjdElkIjoic3VyYWotcGVyc29uYWwiLCJzdG9yYWdlQnVja2V0Ijoic3VyYWotcGVyc29uYWwuYXBwc3BvdC5jb20iLCJtZXNzYWdpbmdTZW5kZXJJZCI6IjQ4NDQ4NzIxNzExIiwiYXBwSWQiOiIxOjQ4NDQ4NzIxNzExOndlYjo2NGI1NDM3YmU1ZmExZWE5OGQ0N2RhIn0="
+);
 
-const app = initializeApp(JSON.parse(firebaseConfig));
+export const app = initializeApp(JSON.parse(firebaseConfig));
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-
-
 /**
- * 
  *
- * Helper functions 
+ *
+ * Helper functions
  *
  **/
 
@@ -34,7 +39,7 @@ async function loginWithGoogle() {
 
     return { uid: user.uid, displayName: user.displayName };
   } catch (error) {
-    if ((error as any).code !== 'auth/cancelled-popup-request') {
+    if ((error as any).code !== "auth/cancelled-popup-request") {
       console.error(error);
     }
     return null;
@@ -43,7 +48,7 @@ async function loginWithGoogle() {
 
 async function sendMessage(roomId: string, user: User, text: string) {
   try {
-    await addDoc(collection(db, 'chat-rooms', roomId, 'messages'), {
+    await addDoc(collection(db, "chat-rooms", roomId, "messages"), {
       uid: user.uid,
       displayName: user.displayName,
       text: text.trim(),
@@ -56,7 +61,10 @@ async function sendMessage(roomId: string, user: User, text: string) {
 
 function getMessages(roomId: string, callback: any) {
   return onSnapshot(
-    query(collection(db, 'chat-rooms', roomId, 'messages'), orderBy('timestamp', 'asc')),
+    query(
+      collection(db, "chat-rooms", roomId, "messages"),
+      orderBy("timestamp", "asc")
+    ),
     (querySnapshot) => {
       const messages = querySnapshot.docs.map((x) => ({
         id: x.id,

@@ -14,8 +14,6 @@ function MessageList({ roomId }: { roomId: string }) {
         }
     });
 
-    console.log(messages)
-
     // TODO: Add loading state
     // if (!messages) return (
     //     <div className="flex flex-col items-center justify-center h-full">
@@ -25,7 +23,7 @@ function MessageList({ roomId }: { roomId: string }) {
 
     return (
         <div className="overflow-x-hidden overflow-y-auto h-max message-list-container bg-slate-950" ref={containerRef}>
-            <ul className="h-full px-4 py-6 rounded-md bg-slate-800 message-list">
+            <ul className="px-4 py-6 rounded-md bg-slate-800 message-list" style={{ height: '100%' }}>
                 {messages.map((x: any) => (
                     <Message
                         key={x.id}
