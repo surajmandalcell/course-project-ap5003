@@ -1,4 +1,3 @@
-import { getAuth } from 'firebase/auth';
 import React from 'react';
 import { useMessages } from '../../hooks/useMessages';
 import { auth } from '../../services/firebase';
@@ -16,8 +15,8 @@ function MessageList({ roomId }: { roomId: string }) {
     });
 
     return (
-        <div className="message-list-container" ref={containerRef}>
-            <ul className="message-list">
+        <div className="overflow-x-hidden overflow-y-auto h-max message-list-container bg-slate-950" ref={containerRef}>
+            <ul className="h-full px-4 py-6 rounded-md bg-slate-800 message-list">
                 {messages.map((x: any) => (
                     <Message
                         key={x.id}

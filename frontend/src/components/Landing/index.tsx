@@ -15,6 +15,9 @@ function ChatRoom() {
     }
   }, [params]);
 
+  const handleSidebarClick = (roomId: string) => {
+    setRoom(chatRooms.find((x) => x.id === roomId));
+  };
 
   return (
     <div className="flex flex-row w-screen h-screen">
@@ -24,12 +27,12 @@ function ChatRoom() {
         <ul>
           {chatRooms.map((room) => (
             <li key={room.id}>
-              <Link
-                to={`/room/${room.id}`}
-                className="block px-4 py-2 rounded hover:bg-gray-700"
+              <div
+                onClick={() => handleSidebarClick(room.id)}
+                className="block px-4 py-2 rounded hover:bg-gray-700 hover:cursor-pointer"
               >
                 {room.title}
-              </Link>
+              </div>
             </li>
           ))}
         </ul>
@@ -37,8 +40,8 @@ function ChatRoom() {
 
       {/* Chat Room */}
       <div className="w-3/4 p-4 bg-gray-900">
-        <h2 className="mb-4 text-lg font-bold">{room.title}</h2>
-        <div className="messages-container">
+        <div className="flex flex-col h-full messages-container">
+          <h2 className="py-4 pl-4 mb-2 text-lg font-bold">{room.title}</h2>
           <MessageList roomId={room.id} />
           <MessageInput roomId={room.id} />
         </div>
