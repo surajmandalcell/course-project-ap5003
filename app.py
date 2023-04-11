@@ -12,8 +12,15 @@ app.register_blueprint(app_routes)
 def serve():
     return send_from_directory(app.static_folder, "index.html")
 
+
 ENV_DEBUG = os.environ.get("APP_DEBUG", True)
-ENV_PORT = os.environ.get("APP_PORT", 8080)
+ENV_PORT = os.environ.get("APP_PORT", 5174)
 
 if __name__ == "__main__":
-    app.run(use_reloader=ENV_DEBUG, host="0.0.0.0", port=80, debug=ENV_DEBUG, threaded=True)
+    app.run(
+        use_reloader=ENV_DEBUG,
+        host="0.0.0.0",
+        port=ENV_PORT,
+        debug=ENV_DEBUG,
+        threaded=True,
+    )

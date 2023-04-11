@@ -5,6 +5,7 @@ const chatRooms = [
   { id: "news", title: "🗞 News" },
   { id: "music", title: "🎹 Music" },
   { id: "sports", title: "🏈 Sports" },
+  { id: "delta", title: "🏈 Delta" },
   { id: "announcements", title: "📢 Announcements" },
 ];
 
